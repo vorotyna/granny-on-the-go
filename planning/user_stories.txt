@@ -1,0 +1,7 @@
+As a User Client I want to request an order from a restaurant because I would like to order food and be notified when it it does because i am hungry
+As a user client I want to receive a updates (sms message or online) for when my food is ready beacuse i like convience
+
+
+As a user restaurant i want to receive orders from clients via sms message because it will make my life easier
+as a user restaurant i want to send a apox delivery time via sms because i want to ensure great costomer service
+

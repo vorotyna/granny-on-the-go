@@ -1,0 +1,42 @@
+~~~ List of Features ~~~
+
+Website with a home page
+  - displays restaurant menu/ order choices
+  - Login box/area (possible create users)
+  WHEN LOGGED IN
+    AS USER
+    -My order/cart (on side of the page as a column)
+    -Confim order page after submit (Checkout page)
+     - Includes notes test area
+    -MY ORDERS page/view (happens after checkout is complete and is updated by restaurant )
+
+    AS restaurant
+    - My restaurant home page to track incoming orders
+    - Linked to client checkout page (same view)
+
+Select one or more dishes
+  - set up like a menu
+  - Item box
+  - order button
+  - quantity (extra)
+  - Will happen on side pane and checkout page
+
+selection goes to a checkout/cart (CHECKOUT PAGE)
+ - Total at the bottom
+ - Checkout button
+ - Displays Cart/order (all your items)
+ - Enter information (ex. Phone number) (could be included in user DB)
+
+client submits order and restaurant receives order
+  - restaurant notificaion via text and web on restaurant account/user
+
+restaurant accepts order
+  - restaurant receives order via sms or the web app (TDB)
+
+restaurant sends back an apox delivery time
+  - Specify how long order will take
+  -
+
+client gets notified when order will be ready
+  -Client receives txt message
+  - order confimed in My orders Tab
