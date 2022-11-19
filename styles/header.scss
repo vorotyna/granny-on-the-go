@@ -14,6 +14,7 @@ $red: #C53D34;
   justify-content: space-between;
   align-items: flex-end;
 }
+
 .page-title-box {
   // border: 1px solid red;
   margin: 0;
@@ -33,8 +34,8 @@ $red: #C53D34;
 
 .nav-box{
   // border: 1px solid blue;
-  margin: 0;
   padding: 0;
+  margin: 0.5rem 0;
   width: 500px;
   height: 2rem;
   display: flex;
@@ -44,10 +45,19 @@ $red: #C53D34;
 
 }
 
-.nav-item {
-  color: $red;
+.nav-item{
   list-style: none;
-  font-size: 1.2rem;
 }
+.nav-item a {
+  color: $red;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-item a:hover{
+  text-decoration: underline;
+  color: red;
+}
+
 
 
