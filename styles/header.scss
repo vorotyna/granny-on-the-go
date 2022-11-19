@@ -1,6 +1,7 @@
 $background-offWhite: #F8F6ED;
 $background-creme: #EDE2B6;
 $red: #C53D34;
+$headerfont: 'Almarai', sans-serif;
 
 
 .header-box {
@@ -20,9 +21,11 @@ $red: #C53D34;
   margin: 0;
 
 
+
   .page-title {
     color: $red;
     margin: 1rem;
+    font-family: $headerfont
 
   }
 }
