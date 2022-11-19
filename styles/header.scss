@@ -1,0 +1,23 @@
+
+
+
+.page-title-box {
+  border: 1px solid red;
+  width: 100%;
+  height: 10vh;
+}
+
+.nav-box{
+  border: 1px solid blue;
+  margin: 0;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.nav-item {
+  list-style: none;
+  margin: 0 2rem;
+}
