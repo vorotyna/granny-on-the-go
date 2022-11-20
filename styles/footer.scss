@@ -1,21 +1,21 @@
-$background-offWhite: #F8F6ED;
-$background-creme: #EDE2B6;
-$red: #C53D34;
-$headerfont: 'Almarai', sans-serif;
+$background-offWhite: #f8f6ed;
+$background-creme: #ede2b6;
+$red: #c53d34;
+$headerfont: "Almarai", sans-serif;
 
-.footer-container{
+.footer-container {
   position: fixed; //REMOVE WHEN PAGE HAS CONTENT
   bottom: 0;
   width: 100%;
-  height: 15vh;   /* Height of the footer */
+  height: 15vh; /* Height of the footer */
   background: $background-offWhite;
   border-top: 2px solid $red;
 
-  .footer-box{
+  .footer-box {
     margin-top: 2rem;
   }
 
-  p{
+  p {
     text-align: center;
     color: $red;
   }
