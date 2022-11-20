@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>Restaurant Menu</title>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,10 +9,9 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
     <link rel="stylesheet" href="/vendor/border-box.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/restaurant.css" />
 
     <!-- FONTS  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,15 +31,275 @@
     <script defer src="/scripts/app.js"></script>
   </head>
 
-  <header><% include partials/_header.ejs %></header>
-
   <body>
-    <form method="POST" action="/" id="search-form">
-      <textarea
-        name="text"
-        placeholder="Search for your favourite Gran"
-        id="gran-search"
-      ></textarea>
-    </form>
+    <header><% include partials/_header.ejs %></header>
+    <div class="cover-photo"></div>
+    <section>
+      <div class="restaurant-info">
+        <h2 class="restaurant-name">McGranny's (123 King St)</h2>
+        <p class="rating">★ 4.9 (47 reviews) • Italian</p>
+        <p class="slogan">Your local Italian nonna. Filling bellies since 1989.</p>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="menu">
+          <h2 class="menu-group-heading">Entrées</h2>
+          <div class="menu-group">
+            <div class="menu-item">
+              <img
+                src="https://www.lifeasastrawberry.com/wp-content/uploads/2012/11/warm-bruschetta-1.jpg"
+                alt="Bruschetta"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Bruschetta</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://www.foodnetwork.com/content/dam/images/food/fullset/2003/9/22/0/tm1a35_caprese_salad.jpg"
+                alt="caprese-salad"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Caprese Salad</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://www.simplyrecipes.com/thmb/yW9NXC97hUwj5_sGRa8gcle0LSM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2006__09__Garlic-Bread-LEAD-1-8b9944bb8e7a4fc49094da4d34f7ba50.jpg"
+                alt="garlic-bread"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Garlic Bread</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+          </div>
+        </div>
+
+
+
+        <div class="menu">
+          <h2 class="menu-group-heading">Mains</h2>
+          <div class="menu-group">
+            <div class="menu-item">
+              <img
+                src="https://www.thespruceeats.com/thmb/ArtZuvbymbGrTT7oDJKHd_QMgaE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/grilled-chicken-panini-sandwich-recipe-2097378-hero-01-09e7d3d7e8604a8a90217e6f9e356648.jpg"
+                alt="chicken-panini"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Chicken Pesto Panini</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://myfoodbook.com.au/sites/default/files/styles/schema_img/public/recipe_photo/perfect_italiano_fettucine_carbonara.jpg"
+                alt="carbonara"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Fettucine Carbonara</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://www.acouplecooks.com/wp-content/uploads/2018/10/Margherita-Pizza-018.jpg"
+                alt="pizza"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Margherita Pizza</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="menu">
+          <h2 class="menu-group-heading">Snacks and Dessert</h2>
+          <div class="menu-group">
+            <div class="menu-item">
+              <img
+                src="https://static.onecms.io/wp-content/uploads/sites/43/2022/04/07/21412-tiramisu-ii-3x2-119.jpg"
+                alt="tiramisu"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Tiramisu</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://assets.bonappetit.com/photos/5bedd7a0c09fe84a28774cb4/5:4/w_3515,h_2812,c_limit/cannoli-1.jpg"
+                alt="cannoli"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Cannoli</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://media.timeout.com/images/105785145/750/422/image.jpg"
+                alt="maritozzi"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Maritozzi</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="menu">
+          <h2 class="menu-group-heading">Drinks</h2>
+          <div class="menu-group">
+            <div class="menu-item">
+              <img
+                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/aperol-spritz-recipe-1628758400.jpg"
+                alt="aperol"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Aperol Spritz</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg"
+                alt="espresso"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Espresso</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img
+                src="https://hips.hearstapps.com/hmg-prod/images/italian-soda5-1651254455.jpg"
+                alt="soda"
+                class="menu-item-image"
+              />
+              <div class="menu-item-text">
+                <h3 class="menu-item-heading">
+                  <span class="menu-item-name">Italian Soda</span>
+                  <span class="menu-item-price">$4.50</span>
+                </h3>
+                <p class="menu-item-description">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro
+                  soluta officia quaerat. Ad repudiandae quas, maxime quaerat
+                  officiis impedit fuga alias quidem architecto optio tempore
+                  omnis accusamus vero unde eaque.
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
   </body>
 </html>

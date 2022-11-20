@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Restaurant Menu</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/my-orders.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+
+    <!-- FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- BODY FONT ---- font-family: 'Libre Baskerville', serif;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- HEADER FONT ---- font-family: 'Square Peg', cursive;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
+
+  <body>
+    <header><% include partials/_header.ejs %></header>
+    <main>
+      <section class="my-order-summary">
+        <h2>My Order</h2>
+        <div class="button-display">
+          <div class="grandma">
+            <img
+              src="https://www.tannersorchard.com/wp-content/uploads/2021/02/cooking-with-grandma-tanner-photo-1024x1024.jpg"
+              alt="profile-photo"
+            />
+            <div class="grandma-specifications">
+              <h3>McGranny's (123 King St)</h3>
+              <h6>1 item for $13.44 • Nov 19 at 6:44 PM</h6>
+              <div class="item-list">
+                <h5 class="item-quantity">1</h5>
+                <p class="item-name">Chocolate Chip Cookies</p>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="submit" id="order-again">Order again</button>
+            <button type="submit" id="rate-order">Rate your order</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="order-confirmation-summary">
+        <div class="user-info">
+          <h3 class="user-header">My Information</h3>
+          <div class="name">
+            <h5 class="name-header">Name:</h5>
+            <p class="name-body">Liso Piso</p>
+          </div>
+          <div class="number">
+            <h5 class="name-header">Phone Number:</h5>
+            <p class="name-body">123-456-7891</p>
+          </div>
+        </div>
+        <div class="confirmation-status">
+          <h3>Order Status</h3>
+          <p>Confirmed</p>
+        </div>
+        <div class="time">
+          <h3>Estimated Time</h3>
+          <p>30 minutes</p>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <footer><% include partials/_footer.ejs %></footer>
+</html>
