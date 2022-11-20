@@ -33,6 +33,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  max-width: 50%;
 }
 
 .grandma-specifications {
@@ -147,20 +148,33 @@ img {
   font-weight: 400;
 }
 
-.button-display {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+// Needs to be worked on
+@media (max-width: 850px) and (min-width: 200px) {
+  .button-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+// Needs to be worked on
+@media (max-width: 2000px) and (min-width: 850px) {
+  .button-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
+  max-width: 50%;
 }
 
 #order-again {
   height: 4em;
-  width: 25em;
+  width: 20em;
   margin-left: 2em;
   border-radius: 10px;
   background-color: black;
