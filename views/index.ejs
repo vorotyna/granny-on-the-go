@@ -34,9 +34,16 @@
 
   <header><% include partials/_header.ejs %></header>
 
-  <body>
-    <h1>Have fun! 🥔</h1>
-  </body>
+<header>
+  <% include partials/_header.ejs %>
+</header>
 
-  <footer><% include partials/_footer.ejs %></footer>
+<body>
+
+  <form method="POST" action="/" id="search-form">
+    <textarea name="text" placeholder="Search for your favourite Gran" id="gran-search"></textarea>
+  </form>
+
+</body>
+
 </html>
