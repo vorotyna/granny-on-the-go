@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 const myOrderRoutes = require('./routes/my-order')
+const startOrderRoutes = require('./routes/start-order')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -42,6 +43,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes )
 app.use('/my-order', myOrderRoutes)
+app.use('/start-order', startOrderRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
