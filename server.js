@@ -6,6 +6,11 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 
+// REMOVE BEFORE DEMO
+//---------------------
+const sendSMS = require('./server-sms')
+//=====================
+
 const PORT = process.env.PORT || 8080;
 const app = express();
 
@@ -34,6 +39,7 @@ const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 const myOrderRoutes = require('./routes/my-order')
 const startOrderRoutes = require('./routes/start-order')
+const myOrderApiRoutes = require('./routes/sms-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,11 +50,18 @@ app.use('/users', usersRoutes);
 app.use('/login', loginRoutes )
 app.use('/my-order', myOrderRoutes)
 app.use('/start-order', startOrderRoutes)
+//app.use(myOrderApiRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+app.post('/my-order' , (req,res) => {
+  console.log(req.body)
+  //sendSMS(req.body.data)
+  res.redirect('/my-order');
+})
+
 
 app.get('/', (req, res) => {
   res.render('index');
