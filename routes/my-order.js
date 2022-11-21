@@ -1,4 +1,4 @@
-// Takes user to login page to
+// Takes user to checkout page to
 const express = require('express');
 const router  = express.Router();
 
