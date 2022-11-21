@@ -6,6 +6,8 @@ $descriptionfontsize: 13px;
 body {
   background-color: $lemonmeringue;
   background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+  margin: 0;
+  height: 100%;
 }
 
 main {
@@ -33,6 +35,7 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  max-width: 50%;
 }
 
 .grandma-specifications {
@@ -89,6 +92,7 @@ img {
   justify-content: space-between;
   margin-top: 1em;
   padding-bottom: 2em;
+  margin-bottom: 8em;
 }
 
 .user-info {
@@ -147,20 +151,33 @@ img {
   font-weight: 400;
 }
 
-.button-display {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+// Needs to be worked on
+@media (max-width: 850px) and (min-width: 200px) {
+  .button-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+// Needs to be worked on
+@media (max-width: 2000px) and (min-width: 850px) {
+  .button-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
+  max-width: 50%;
 }
 
 #order-again {
   height: 4em;
-  width: 25em;
+  width: 20em;
   margin-left: 2em;
   border-radius: 10px;
   background-color: black;
