@@ -2,8 +2,8 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/start-order', (req, res) => {
-  res.render('start-orders');
+router.get('/', (req, res) => {
+  res.render('restaurant');
 });
 
 module.exports = router;
