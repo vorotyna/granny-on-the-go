@@ -36,6 +36,7 @@ const loginRoutes = require('./routes/login');
 const myOrderRoutes = require('./routes/my-order')
 const restaurantRoutes = require('./routes/start-order')
 const myOrderApiRoutes = require('./routes/sms-api')
+const smsReplyApiRoutes = require('./routes/sms-reply-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -47,15 +48,12 @@ app.use('/login', loginRoutes )
 app.use('/my-order', myOrderRoutes)
 app.use('/restaurant', restaurantRoutes)
 app.use('/my-order', myOrderApiRoutes)
+app.use('/sms', smsReplyApiRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-//Post route for ajax post from client to send sms
-//This needs to get converted to ROUTE but doesn't work when i do lol
-
 
 
 
