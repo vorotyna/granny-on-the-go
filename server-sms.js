@@ -25,5 +25,15 @@ const sendSMS = function (message){
 
 }
 
+//This funciton takes time in minuets and returns a sms message from the Twilio api
+const sendAproxTime = function (time){
+  const response = new MessagingResponse();
 
-module.exports = sendSMS;
+  response.message(`Your order will be ready in ${time} minuets`);
+
+}
+
+
+
+
+module.exports = sendSMS, sendAproxTime;
