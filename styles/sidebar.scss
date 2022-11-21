@@ -1,0 +1,50 @@
+$bodyfont: "Libre Baskerville", serif;
+$floralwhite: #f8f6ed;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: $bodyfont;
+}
+
+.wrapper {
+  display: flex;
+  position: sticky;
+  height: 100vh;
+  top: 0;
+}
+
+.wrapper .sidebar {
+  width: 200px;
+  max-height: 100vh;
+  background: #c53d34;
+  padding: 0px;
+  position: sticky;
+  top: 0;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrapper .sidebar ul li a {
+  color: white;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas {
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover {
+  opacity: 40%;
+}
+
+.wrapper .sidebar ul li:hover a {
+  color: #fff;
+}
