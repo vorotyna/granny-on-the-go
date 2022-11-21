@@ -15,3 +15,14 @@ router.post('/' , (req,res) => {
 })
 
 module.exports = router;
+
+
+
+
+//THIS ROUTE REQUIRES THE FOLLOWING:
+//NGROK TO BE RUNNING THE LOCAL SERVER TO THE PUBLIC HTTP
+//TWILIO WEBHOOK TO BE SET TO THE FORWARDING NGROK ADDRESS WITH /SMS AT THE END
+
+
+//IF THIS DOES NOT WORK, CHECK THE WEBHOOK ON
+//https://console.twilio.com/us1/develop/phone-numbers/manage/incoming?frameUrl=%2Fconsole%2Fphone-numbers%2Fincoming%2FPNfea347f2537a4a5a0aea1bf5cb65a121%3Fx-target-region%3Dus1
