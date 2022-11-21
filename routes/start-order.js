@@ -1,9 +1,9 @@
-// Takes user to checkout page to
+//takes user to start order page
 const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('my-orders');
+  res.render('restaurant');
 });
 
 module.exports = router;

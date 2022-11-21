@@ -1,0 +1,48 @@
+
+
+LIST OF THINGS TO DO
+-----------------------------------
+
+~~ HOME PAGE ~~
+
+
+~~ START ORDER PAGE ~~
+
+  -DB query to update start order page   - BEN
+  - Implement add button
+   - Item_id and add to Items to order in table
+   - appends items to the my order page
+   - adds as many itmes as button is clicked
+
+  - Link side navigation to page -Alisa
+
+  - Checkout button will re route to my orders page -Alisa
+   - add quantity of items in order inside of button
+
+
+~~ MY ORDER PAGE ~~
+
+  -Show appended items from the start order page
+
+  - Checkout button added to page to complete order
+
+  - my information/order status/aprox time box pops up after order
+    - Aprox time box gets updated with sms (aprox time)
+    - after second text update with completed order
+
+
+~~ LOGIN PAGE ~~ -CORBIN
+
+  - For later
+  -apply login cookie right from home page load / get request
+  -change login to logout
+
+~~ BACK-END ~~ -CORBIN
+
+  - Complete SMS reply for restaurant to send time back followed by another text that let user know that food is ready -CORBIN
+
+
+
+~~ OTHER ~~
+
+  - Update Midterms thread in Discord -BEN

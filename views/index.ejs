@@ -32,16 +32,15 @@
     <script defer src="/scripts/app.js"></script>
   </head>
 
-<header>
-  <% include partials/_header.ejs %>
-</header>
+  <header><% include partials/_header.ejs %></header>
 
-<body>
-
-  <form method="POST" action="/" id="search-form">
-    <textarea name="text" placeholder="Search for your favourite Gran" id="gran-search"></textarea>
-  </form>
-
-</body>
-
+  <body>
+    <form method="POST" action="/" id="search-form">
+      <textarea
+        name="text"
+        placeholder="Search for your favourite Gran"
+        id="gran-search"
+      ></textarea>
+    </form>
+  </body>
 </html>
