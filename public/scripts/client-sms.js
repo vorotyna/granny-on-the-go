@@ -1,12 +1,16 @@
-const sendSMS = require('../../server-sms')
 
+//sends text when test sms button is clicked (TESTING PURPOSES)
 $(() => {
   console.log('hello from document ready!')
   $('#test-sms').on('click', () => {
+    console.log('Hello From clicked sms button')
 
-    console.log('Hello From sms.js')
-
-    //sendSMS('Hello from sms.js!')
+    $.ajax({
+      type: 'POST',
+      url: '/my-order',
+      data: {
+        data:'Hi Cailee <3'}
+    })
 
   });
 });
