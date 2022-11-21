@@ -24,3 +24,6 @@ const sendSMS = function (message){
     .then(message => console.log(message.sid));
 
 }
+
+
+module.exports = sendSMS;
