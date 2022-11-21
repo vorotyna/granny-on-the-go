@@ -9,6 +9,7 @@ const morgan = require('morgan');
 // REMOVE BEFORE DEMO
 //---------------------
 const sendSMS = require('./server-sms')
+const sendAproxTime = require('./server-sms')
 //=====================
 
 const PORT = process.env.PORT || 8080;
@@ -39,7 +40,7 @@ const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
 const myOrderRoutes = require('./routes/my-order')
 const startOrderRoutes = require('./routes/start-order')
-const myOrderApiRoutes = require('./routes/sms-api')
+//const myOrderApiRoutes = require('./routes/sms-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -56,11 +57,14 @@ app.use('/start-order', startOrderRoutes)
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+//This needs to get converted to ROUTE but doesn't work when i do lol
 app.post('/my-order' , (req,res) => {
   console.log(req.body)
-  //sendSMS(req.body.data)
+  sendSMS(req.body.data)
   res.redirect('/my-order');
 })
+
 
 
 app.get('/', (req, res) => {
