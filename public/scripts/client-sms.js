@@ -9,7 +9,7 @@ $(() => {
       type: 'POST',
       url: '/my-order',
       data: {
-        data:'Hi Cailee <3'}
+        data:'This is some data'} //This will be a jQuery element selector to select everything in my order
     })
 
   });
