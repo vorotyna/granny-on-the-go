@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 
   if (!req.session.id){
     const templateVars = {user: false}
-    res.render('my-order', templateVars)
+    res.render('my-orders', templateVars)
   }
 
   const templateVars = {user: true}
