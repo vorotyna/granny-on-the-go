@@ -3,7 +3,14 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('restaurant');
+
+  if (!req.session.id){
+    const templateVars = {user: false}
+    res.render('restaurant', templateVars)
+  }
+
+  const templateVars = {user: true}
+  res.render('restaurant', templateVars);
 });
 
 module.exports = router;

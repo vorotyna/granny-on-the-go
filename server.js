@@ -6,11 +6,17 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 
-
 const PORT = process.env.PORT || 8080;
 const app = express();
 
+
+const cookieSession = require('cookie-session')
+
 app.set('view engine', 'ejs');
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -36,6 +42,12 @@ const loginRoutes = require('./routes/login');
 const myOrderRoutes = require('./routes/my-order')
 const restaurantRoutes = require('./routes/start-order')
 const myOrderApiRoutes = require('./routes/sms-api')
+const loginPostRoutes = require('./routes/login-post')
+const logoutRoutes = require('./routes/logout')
+const myOrderCustomerApiRoutes = require('./routes/sms-api-customer')
+const myOrderRestaurantApiRoutes = require('./routes/sms-api-restaurant')
+const restaurantAPIRoutes = require('./routes/restaurant-api')
+//const smsReplyApiRoutes = require('./routes/sms-reply-api') REPLY DOESN'T WORK
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,23 +56,36 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes )
+app.use('/login', loginPostRoutes)
+app.use('/logout', logoutRoutes)
 app.use('/my-order', myOrderRoutes)
 app.use('/restaurant', restaurantRoutes)
 app.use('/my-order', myOrderApiRoutes)
+app.use('/my-order/customer', myOrderCustomerApiRoutes)
+app.use('/my-order/restaurant', myOrderRestaurantApiRoutes)
+app.use('/restaurant', restaurantAPIRoutes)
+
+//app.use('/sms', smsReplyApiRoutes) REPLY DOESN'T WORK
+
+
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-//Post route for ajax post from client to send sms
-//This needs to get converted to ROUTE but doesn't work when i do lol
-
-
 
 
 app.get('/', (req, res) => {
-  res.render('index');
+
+  if (!req.session.id){
+    const templateVars = {user: false}
+    res.render('index', templateVars)
+  }
+
+  const templateVars = {user: true}
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {
