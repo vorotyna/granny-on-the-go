@@ -12,7 +12,7 @@ const createFoodItem = function(data) {
         <h3 class="menu-item-heading">
           <span class="menu-item-name">${data.name}</span>
           <div class="end-of-header">
-            <span class="menu-item-price">$${data.price}</span>
+            <span class="menu-item-price">$${data.price / 100}</span>
             <button class="add">
               +
             </button>
