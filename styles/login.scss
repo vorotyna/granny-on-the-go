@@ -1,7 +1,73 @@
-
+$lemonmeringue: #ede2b6;
+$floralwhite: #f8f6ed;
+$red: #C53D34;
+$bodyfont: "Libre Baskerville", serif;
 
 body {
+  background-color: $lemonmeringue;
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
   margin: 0;
   padding: 0;
 
 }
+
+.wrapper {
+
+  background-color: $floralwhite;
+  width: 50%;
+  height: 30vh;
+  margin: 12rem auto;
+  border: 1px solid #3730299b;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.form-heading {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-family: $bodyfont;
+
+}
+
+.form-signin{
+  width: 60%;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  margin: 0.5rem;
+  height: 1.5rem;
+}
+
+.login-button {
+  background-color: $red;
+  color: floralwhite;
+  height: 1.7rem;
+  border: 2px solid $red;
+  border-radius: 5px;
+  font-weight: bold;
+  //transition-duration: 0.4s;
+
+}
+
+.login-button:hover{
+  background-color: floralwhite;
+  color: $red;
+  transition-duration: 0.4s;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
