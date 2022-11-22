@@ -26,11 +26,13 @@ const createFoodItem = function(data) {
 };
 
 
-const renderItems = (arr, section) => {
-  $(`#${section}-container`).empty();
+const renderItems = (arr) => {
+
   for (let item of arr) {
+    $(`#${item.category}-container`).empty();
+    console.log("WOW",item.category);
     const newItemElement = createFoodItem(item);
-    $(`#${section}-container`).append(newItemElement);
+    $(`#${item.category}-container`).append(newItemElement);
   }
 };
 
@@ -58,8 +60,8 @@ const loadItems = function() {
     url: "/restaurant/1/1",
   })
     .done((response) => {
-      console.log("HERE", response.returnObject.items);
-      renderItems(response.returnObject.items, "appetizers");
+      // console.log("HERE", response.returnObject.items);
+      renderItems(response.returnObject.items);
     });
 };
 
