@@ -8,12 +8,8 @@ const client = require('twilio')(accountSid, authToken);
 const twilioPhone = '+15873192825';
 
 
-
-
-
 //This function takes in a string as a message and sends it via sms from the twilio api
-
-const sendSMS = function (message){
+const sendCustomerSMS = function (message){
   client.messages
     .create({
         body: message,
@@ -25,15 +21,19 @@ const sendSMS = function (message){
 
 }
 
-//This funciton takes time in minuets and returns a sms message from the Twilio api
-const sendAproxTime = function (time){
-  const response = new MessagingResponse();
-
-  response.message(`Your order will be ready in ${time} minuets`);
+const sendRestaurantSMS = function (message){
+  client.messages
+    .create({
+        body: message,
+        from: twilioPhone,
+        statusCallback: 'http://postb.in/1234abcd',
+        to: '+15872204888'
+      })
+    .then(message => console.log(message.sid));
 
 }
 
 
 
 
-module.exports = sendSMS, sendAproxTime;
+module.exports = sendCustomerSMS, sendRestaurantSMS;
