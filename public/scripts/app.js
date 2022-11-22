@@ -16,6 +16,9 @@ const createFoodItem = function(data) {
             <button class="add">
               +
             </button>
+            <button class="remove">
+            -
+          </button>
           </div>
         </h3>
         <p class="menu-item-description">${data.description}</p>
@@ -30,12 +33,11 @@ const renderItems = (arr) => {
 
   for (let item of arr) {
     $(`#${item.category}-container`).empty();
-    console.log("WOW",item.category);
+    console.log("WOW", item.category);
     const newItemElement = createFoodItem(item);
     $(`#${item.category}-container`).append(newItemElement);
   }
 };
-
 
 
 
@@ -46,7 +48,6 @@ $(() => {
       url: '/restaurant'
     })
       .then(() => {
-        console.log("hi");
         loadItems();
       });
   });
@@ -54,13 +55,11 @@ $(() => {
 
 
 const loadItems = function() {
-  console.log("here1");
   $.ajax({
     method: "GET",
     url: "/restaurant/1/1",
   })
     .done((response) => {
-      // console.log("HERE", response.returnObject.items);
       renderItems(response.returnObject.items);
     });
 };
@@ -75,3 +74,37 @@ loadItems();
 
 // add item-appetizers, item-mains, item-desserts, item-drinks ids
 // add
+
+$(document).ready(function() {
+  console.log('The document is ready!');
+
+  // Create a counter
+  let counter = 0;
+
+  // Make checkout counter count each time an item is added to cart
+  $(document.body).on('click', '.add', function() {
+    counter += 1;
+    console.log(counter);
+
+    // Target the checkout button
+    let checkout = $('.checkout');
+    checkout.val(`Checkout (${counter}) 🛒`);
+
+  });
+
+  $(document.body).on('click', '.remove', function() {
+    counter -= 1;
+    console.log(counter);
+
+    // Target the checkout button
+    let checkout = $('.checkout');
+    checkout.val(`Checkout (${counter}) 🛒`);
+
+    // If counter is at 0, you cannot remove an item
+    if (counter < 0) {
+      counter = 0;
+      let checkout = $('.checkout');
+      checkout.val(`Checkout (${counter}) 🛒`);
+    }
+  });
+});

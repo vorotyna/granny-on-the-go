@@ -120,6 +120,21 @@ body {
   opacity: 80%;
 }
 
+.remove {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #c53d34;
+  background-color: #c53d34;
+  color: white;
+  margin-left: 10px;
+}
+
+.remove:hover {
+  opacity: 80%;
+}
+
 .end-of-header {
   display: flex;
   flex-direction: row;
