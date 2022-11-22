@@ -39,13 +39,9 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const loginRoutes = require('./routes/login');
-const loginPostRoutes = require('./routes/login-post')
-const logoutRoutes = require('./routes/logout')
 const myOrderRoutes = require('./routes/my-order')
 const restaurantRoutes = require('./routes/start-order')
-const myOrderCustomerApiRoutes = require('./routes/sms-api-customer')
-const myOrderRestaurantApiRoutes = require('./routes/sms-api-restaurant')
-//const smsReplyApiRoutes = require('./routes/sms-reply-api') REPLY DOESN'T WORK
+const myOrderApiRoutes = require('./routes/sms-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -54,16 +50,9 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/login', loginRoutes )
-app.use('/login', loginPostRoutes)
-app.use('/logout', logoutRoutes)
 app.use('/my-order', myOrderRoutes)
 app.use('/restaurant', restaurantRoutes)
-app.use('/my-order/customer', myOrderCustomerApiRoutes)
-app.use('/my-order/restaurant', myOrderRestaurantApiRoutes)
-
-//app.use('/sms', smsReplyApiRoutes) REPLY DOESN'T WORK
-
-
+app.use('/my-order', myOrderApiRoutes)
 // Note: mount other resources here, using the same pattern above
 
 // Home page

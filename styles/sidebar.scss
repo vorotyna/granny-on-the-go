@@ -37,14 +37,10 @@ $floralwhite: #f8f6ed;
   display: block;
 }
 
-.wrapper .sidebar ul li a .fas {
-  width: 25px;
-}
-
 .wrapper .sidebar ul li:hover {
   opacity: 40%;
 }
 
 .wrapper .sidebar ul li:hover a {
-  color: #fff;
+  color: white;
 }
