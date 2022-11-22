@@ -2,7 +2,7 @@ const db = require('../connection');
 
 // Get items by order_id from database
 const getItemsByOrderId = (orderId) => {
-  return db.query(`SELECT * FROM items_in_order where order_id = ${orderId};`)
+  return db.query(`SELECT * FROM items_in_order WHERE order_id = ${orderId};`)
     .then(data => {
       return data.rows;
     });
@@ -12,7 +12,7 @@ const getItemsByOrderId = (orderId) => {
 const addItemToOrder = (itemID, orderID) => {
 
   const queryString = `
-  INSERT INTO item_in_order (item_id, order_id, quantity)
+  INSERT INTO items_in_order (item_id, order_id, quantity)
   VALUES ($1, $2, $3);
   `;
 

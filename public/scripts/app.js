@@ -63,6 +63,7 @@ const loadItems = function() {
     });
 };
 
+loadItems();
 
 // get items from db for a certain restaurant
 // add items to a list and make a food component for each item
