@@ -1,4 +1,3 @@
-// Client facing scripts here
 const createFoodItem = function(data) {
   console.log(data);
   let newItem = `
@@ -37,8 +36,11 @@ const renderItems = (arr, section) => {
 
 
 
-$(() => {
+$(document).ready(() => {
+  console.log("pre");
   $('#fetch-restaurant').click(() => {
+    window.location.href = '/restaurant';
+
     $.ajax({
       method: 'GET',
       url: '/restaurant'
@@ -58,8 +60,8 @@ const loadItems = function() {
     url: "/restaurant/1/1",
   })
     .done((response) => {
-      console.log("HERE", response.returnObject.items);
-      renderItems(response.returnObject.items, "appetizers");
+      console.log("HERE");
+      renderItems(response.items, "appetizers");
     });
 };
 
