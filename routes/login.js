@@ -11,7 +11,14 @@ app.use(cookieSession({
 
 
 router.get('/', (req, res) => {
-  res.render('login');
+
+  if (!req.session.id){
+    const templateVars = {user: false}
+    res.render('login', templateVars)
+  }
+
+  const templateVars = {user: true}
+  res.render('login', templateVars);
 });
 
 module.exports = router;
