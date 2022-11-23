@@ -59,3 +59,16 @@ $tabfont: "Libre Baskerville", serif;
   text-decoration: underline;
   color: red;
 }
+
+.logout {
+  background: none;
+  border: none;
+  color: $red;
+  font-size: 1.2rem;
+}
+
+.logout:hover {
+  text-decoration: underline;
+  color: red;
+
+}
