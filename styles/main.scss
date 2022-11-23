@@ -1,12 +1,8 @@
 body {
   background-image: url(../images/Nonna.png);
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: top;
   background-size: 100vw 100vh;
-  ;
-
-
-
   #search-form {
     display: flex;
     justify-content: flex-end;
@@ -14,7 +10,7 @@ body {
     padding-right: 10vh;
 
     textarea {
-      background-color: #F8F6ED;
+      background-color: #f8f6ed;
       border: none;
       width: 35%;
       margin-bottom: 0.5em;

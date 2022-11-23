@@ -1,15 +1,15 @@
-$background-offWhite: #F8F6ED;
-$background-creme: #EDE2B6;
-$red: #C53D34;
-$headerfont: 'Almarai', sans-serif;
-
+$background-offWhite: #f8f6ed;
+$background-creme: #ede2b6;
+$red: #c53d34;
+$headerfont: "Square Peg", cursive;
+$tabfont: "Libre Baskerville", serif;
 
 .header-box {
   // border: 1px solid green ;
   background-color: $background-offWhite;
   border-bottom: 2px solid $red;
   width: 100%;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -20,35 +20,34 @@ $headerfont: 'Almarai', sans-serif;
   // border: 1px solid red;
   margin: 0;
 
-
-
   .page-title {
     color: $red;
     margin: 1rem;
-    font-family: $headerfont
-
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    font-family: $headerfont;
+    font-size: 50px;
   }
 }
 
-
-.nav-contianer{
+.nav-contianer {
   width: 300px;
 }
 
-.nav-box{
+.nav-box {
   // border: 1px solid blue;
   padding: 0;
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
   width: 600px;
   height: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-
+  font-family: $tabfont;
 }
 
-.nav-item{
+.nav-item {
   list-style: none;
 }
 .nav-item a {
@@ -57,10 +56,7 @@ $headerfont: 'Almarai', sans-serif;
   text-decoration: none;
 }
 
-.nav-item a:hover{
+.nav-item a:hover {
   text-decoration: underline;
   color: red;
 }
-
-
-
