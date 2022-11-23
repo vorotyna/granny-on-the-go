@@ -1,6 +1,7 @@
 // Takes user to checkout page to
 const express = require('express');
 const userQueries = require('../db/queries/users');
+const orderQueries = require('../db/queries/orders');
 
 const router = express.Router();
 
@@ -18,12 +19,16 @@ router.get('/', (req, res) => {
 
 // Get information about the user/order
 router.get('/:userId', (req, res) => {
-  console.log('poop', req.params);
   userQueries.getUserInfoByOrderId(req.params.userId)
     .then(users => {
-      returnObject = {};
-      returnObject["userInfo"] = users;
-      res.json({ returnObject });
+      orderQueries.getOrderSummary(req.params.userId)
+        .then(orders => {
+          returnObject = {};
+          returnObject["userInfo"] = users;
+          returnObject["order"] = orders;
+
+          res.json({ returnObject });
+        });
     })
     .catch(err => {
       res

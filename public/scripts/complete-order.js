@@ -1,4 +1,4 @@
-// ------ COMPLETE ORDER BUTTON (my-orders) ----- //
+// ------ COMPLETE ORDER BUTTON (/my-orders) ----- //
 
 // Create HTML template for entire user and order info box
 const createMyInfo = function(data) {
@@ -47,6 +47,7 @@ const renderInfo = (arr) => {
 
 // This script populates the user information box on the /my-order page, using database
 $(document).ready(function() {
+
   $("#summary-container").hide();
 
   $('#complete-order').click(() => {
@@ -71,6 +72,53 @@ const loadMyInfo = function() {
   })
     .done((response) => {
       renderInfo(response.returnObject.userInfo);
+    });
+};
+
+
+
+
+
+
+
+
+
+
+// ------ UPDATE ORDER SUMMARY (/my-orders) ----- //
+
+// Create HTML template for order summary
+const createOrderSummary = function(data) {
+  let orderSummary = `
+  <h6>${data.quantity} items for $${data.total / 100} • ${data.date}</h6>
+`;
+  return orderSummary;
+};
+
+
+// Add order infortmation to be displayed on order summary
+const renderSummary = (arr) => {
+  for (let summary of arr) {
+    $(`#final-order`).empty();
+    const newSummary = createOrderSummary(summary);
+    $(`#final-order`).append(newSummary);
+  }
+};
+
+
+// This script populates the order summary on the /my-order page, using database
+$(document).ready(function() {
+  loadOrderSummary();
+});
+
+
+// Gets order information via user_id
+const loadOrderSummary = function() {
+  $.ajax({
+    method: "GET",
+    url: "/my-order/1",
+  })
+    .done((response) => {
+      renderSummary(response.returnObject.order);
     });
 };
 
