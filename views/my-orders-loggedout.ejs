@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Orders Page</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/my-orders-loggedout.css" />
+
+    <!-- FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- BODY FONT ---- font-family: 'Libre Baskerville', serif;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- HEADER FONT ---- font-family: 'Square Peg', cursive;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JQUERY IMPORT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- APP JS -->
+    <script type="text/javascript" src="/scripts/populate-myOrders.js"></script>
+    <script type="text/javascript" src="/scripts/client-sms.js"></script>
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+    <script defer src="/scripts/complete-order.js"></script>
+  </head>
+
+  <body>
+    <header><% include partials/_header.ejs %></header>
+    <main>
+      <section class="my-order-summary">
+
+        <div class="container">
+          <h2>Please Login to place an Order</h2>
+          <div class="login">
+            <a class="login-btn" href="/login">Login</a>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </body>
+
+  <footer><% include partials/_footer.ejs %></footer>
+</html>

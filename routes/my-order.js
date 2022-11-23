@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
   if (!req.session.id) {
     const templateVars = { user: false };
-    res.render('my-orders', templateVars);
+    res.render('my-orders-loggedout', templateVars);
   }
 
   const templateVars = { user: true };
