@@ -1,6 +1,5 @@
 // Client facing scripts here
 const createFoodItem = function(data) {
-  console.log(data);
   let newItem = `
     <div class="menu-item">
       <img
@@ -75,8 +74,12 @@ loadItems();
 // add item-appetizers, item-mains, item-desserts, item-drinks ids
 // add
 
+
+
+
+
+// ----- CREATE COUNTER FOR ITEMS IN CART ----- //
 $(document).ready(function() {
-  console.log('The document is ready!');
 
   // Create a counter
   let counter = 0;
@@ -84,7 +87,6 @@ $(document).ready(function() {
   // Make checkout counter count each time an item is added to cart
   $(document.body).on('click', '.add', function() {
     counter += 1;
-    console.log(counter);
 
     // Target the checkout button
     let checkout = $('.checkout');
@@ -94,7 +96,6 @@ $(document).ready(function() {
 
   $(document.body).on('click', '.remove', function() {
     counter -= 1;
-    console.log(counter);
 
     // Target the checkout button
     let checkout = $('.checkout');

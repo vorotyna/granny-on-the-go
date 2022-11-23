@@ -35,6 +35,7 @@
     <script type="text/javascript" src="/scripts/client-sms.js"></script>
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
+    <script defer src="/scripts/complete-order.js"></script>
   </head>
 
   <body>
@@ -63,27 +64,10 @@
         </div>
       </section>
 
-      <section class="order-confirmation-summary">
-        <div class="user-info">
-          <h3 class="user-header">My Information</h3>
-          <div class="name">
-            <h5 class="name-header">Name:</h5>
-            <p class="name-body">Liso Piso</p>
-          </div>
-          <div class="number">
-            <h5 class="name-header">Phone Number:</h5>
-            <p class="name-body">123-456-7891</p>
-          </div>
-        </div>
-        <div class="confirmation-status">
-          <h3>Order Status</h3>
-          <p>Confirmed</p>
-        </div>
-        <div class="time">
-          <h3>Estimated Time</h3>
-          <p>30 minutes</p>
-        </div>
-      </section>
+      <section
+        class="order-confirmation-summary"
+        id="summary-container"
+      ></section>
     </main>
   </body>
 
