@@ -64,7 +64,7 @@ main {
   align-items: baseline;
 }
 
-.item-container{
+.item-container {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -93,7 +93,6 @@ main {
   margin-top: 1em;
   margin-left: 1rem;
   color: rgba(0, 0, 0, 0.498);
-
 }
 
 img {
@@ -206,13 +205,13 @@ img {
   background-color: rgba(0, 0, 0, 0.832);
 }
 
-#rate-order {
+#complete-order {
   @extend #order-again;
   background-color: rgb(225, 225, 225);
   border: 0;
   color: black;
 }
 
-#rate-order:hover {
+#complete-order:hover {
   background-color: rgb(208, 208, 208);
 }
