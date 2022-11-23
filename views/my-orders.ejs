@@ -35,7 +35,7 @@
     <script type="text/javascript" src="/scripts/client-sms.js"></script>
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
-
+    <script defer src="/scripts/complete-order.js"></script>
   </head>
 
   <body>
@@ -52,45 +52,22 @@
             <div class="grandma-specifications">
               <h3>McGranny's (123 King St)</h3>
               <h6>1 item for $13.44 • Nov 19 at 6:44 PM</h6>
-              <div class="item-list" id="item-list">
-
-
-
-
-              </div>
+              <div class="item-list" id="item-list"></div>
             </div>
           </div>
           <div class="buttons">
-              <button type="submit" id="order-again">Order again</button>
-              <button type="submit" id="rate-order">Rate your order</button>
+            <button type="submit" id="order-again">Order again</button>
+            <button type="submit" id="complete-order">Complete order</button>
 
-              <button type="submit" id="test-sms" >TEST SMS</button>
-
+            <button type="submit" id="test-sms">TEST SMS</button>
           </div>
         </div>
       </section>
 
-      <section class="order-confirmation-summary">
-        <div class="user-info">
-          <h3 class="user-header">My Information</h3>
-          <div class="name">
-            <h5 class="name-header">Name:</h5>
-            <p class="name-body">Liso Piso</p>
-          </div>
-          <div class="number">
-            <h5 class="name-header">Phone Number:</h5>
-            <p class="name-body">123-456-7891</p>
-          </div>
-        </div>
-        <div class="confirmation-status">
-          <h3>Order Status</h3>
-          <p>Confirmed</p>
-        </div>
-        <div class="time">
-          <h3>Estimated Time</h3>
-          <p>30 minutes</p>
-        </div>
-      </section>
+      <section
+        class="order-confirmation-summary"
+        id="summary-container"
+      ></section>
     </main>
   </body>
 
