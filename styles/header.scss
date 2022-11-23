@@ -19,6 +19,9 @@ $tabfont: "Libre Baskerville", serif;
 .page-title-box {
   // border: 1px solid red;
   margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 
   .page-title {
     color: $red;
