@@ -31,4 +31,28 @@ const addItemToOrder = (itemID, orderID) => {
     });
 };
 
-module.exports = { getItemsByOrderId, addItemToOrder };
+// Get order details by user_id
+const getOrderSummary = (userId) => {
+
+  const queryString = `
+  SELECT TO_CHAR(orders.time_placed, 'YYYY-MM-DD') as date, SUM(items_in_order.quanity) as quantity, orders.total_price as total
+  FROM orders
+  JOIN items_in_order ON order_id = orders.id
+  WHERE orders.user_id = $1
+  GROUP BY date, total;
+  `;
+
+
+  const queryParams = [userId];
+
+  return db.query(queryString, queryParams)
+    .then(data => {
+      return data.rows;
+    })
+    .catch(err => {
+      console.log("error", err);
+    });
+};
+
+
+module.exports = { getItemsByOrderId, addItemToOrder, getOrderSummary };
