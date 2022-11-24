@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/footer.css" />
-    <link rel="stylesheet" href="/styles/my-orders.css" />
+    <link rel="stylesheet" href="/styles/my-orders-loggedout.css" />
 
     <!-- FONTS  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,32 +42,16 @@
     <header><% include partials/_header.ejs %></header>
     <main>
       <section class="my-order-summary">
-        <h2>My Order</h2>
-        <div class="button-display">
-          <div class="grandma">
-            <img
-              src="https://www.tannersorchard.com/wp-content/uploads/2021/02/cooking-with-grandma-tanner-photo-1024x1024.jpg"
-              alt="profile-photo"
-            />
-            <div class="grandma-specifications">
-              <h3>McGranny's (123 King St)</h3>
-              <div id="final-order"></div>
-              <div class="item-list" id="item-list"></div>
-            </div>
-          </div>
-          <div class="buttons">
-            <button type="submit" id="order-again">Order again</button>
-            <button type="submit" id="complete-order">Complete order</button>
 
-            <button type="submit" id="test-sms">TEST SMS</button>
+        <div class="container">
+          <h2>Please Login to place an Order</h2>
+          <div class="login">
+            <a class="login-btn" href="/login">Login</a>
           </div>
         </div>
+
       </section>
 
-      <section
-        class="order-confirmation-summary"
-        id="summary-container"
-      ></section>
     </main>
   </body>
 

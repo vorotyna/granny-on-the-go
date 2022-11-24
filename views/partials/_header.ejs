@@ -9,9 +9,9 @@
 </head>
 
 <div class="header-box">
-  <div class="page-title-box">
+  <button class="page-title-box" onClick="location.href='/'">
     <h1 class="page-title">Granny On The Go</h1>
-  </div>
+  </button>
   <nav class="nav-container">
     <ul class="nav-box">
       <li class="nav-item"><a href="/">Home</a></li>
@@ -19,15 +19,15 @@
         <a id="fetch-restaurant" href="/restaurant/"> Start Order </a>
       </li>
       <li class="nav-item"><a href="/my-order">My Order</a></li>
-     <% if (user) { %>
+      <% if (user) { %>
       <li class="nav-item">
         <form action="/logout" method="POST">
-          <button type='submit' class="nav-item">logout</button>
+          <button type="submit" class="nav-item logout">Logout</button>
         </form>
       </li>
-     <% } else { %>
+      <% } else { %>
       <li class="nav-item login-link"><a href="/login">Login</a></li>
-     <% } %>
+      <% } %>
     </ul>
   </nav>
 </div>

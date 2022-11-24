@@ -1,6 +1,5 @@
 // Client facing scripts here
 const createFoodItem = function(data) {
-  console.log(data);
   let newItem = `
     <div class="menu-item">
       <img
@@ -76,9 +75,10 @@ loadItems();
 
 
 
-$(document).ready(function() {
 
-  console.log('The document is ready!');
+
+// ----- CREATE COUNTER FOR ITEMS IN CART ----- //
+$(document).ready(function() {
 
   // Create a counter
   let counter = 0;

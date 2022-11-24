@@ -8,6 +8,8 @@ $headerfont: "Libre Baskerville", serif;
   height: 10vh; /* Height of the footer */
   background: $background-offWhite;
   border-top: 2px solid $red;
+  font-family: $headerfont;
+  font-size: small;
 
   .footer-box {
     margin-top: 2rem;

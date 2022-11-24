@@ -14,10 +14,12 @@ const sendCustomerSMS = function (message){
     .create({
         body: message,
         from: twilioPhone,
-        statusCallback: 'http://postb.in/1234abcd',
         to: '+15872204888'
       })
     .then(message => console.log(message.sid));
+    // client.messages
+    // .create({body: message, from: twilioPhone, to: '+15872204888'})
+    // .then(message => console.log(message.sid));
 
 }
 
@@ -26,7 +28,6 @@ const sendRestaurantSMS = function (message){
     .create({
         body: message,
         from: twilioPhone,
-        statusCallback: 'http://postb.in/1234abcd',
         to: '+15872204888'
       })
     .then(message => console.log(message.sid));
@@ -36,4 +37,4 @@ const sendRestaurantSMS = function (message){
 
 
 
-module.exports = sendCustomerSMS, sendRestaurantSMS;
+module.exports = { sendCustomerSMS, sendRestaurantSMS };
