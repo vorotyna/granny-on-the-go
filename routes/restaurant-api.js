@@ -1,7 +1,9 @@
 //takes user to start order page
 const express = require('express');
+const utils = require('./utils');
 const restaurantQueries = require('../db/queries/restaurant');
 const orderQueries = require('../db/queries/orders');
+
 
 const router = express.Router();
 
@@ -20,6 +22,7 @@ router.get('/:resId/:orderId', (req, res) => {
           returnObject = {};
           returnObject["items"] = items;
           returnObject["orderItems"] = orderItems;
+          returnObject["totalQuantity"] = utils.totalQuantity(orderItems);
           // res.render('restaurant', { data: returnObject });
 
           res.json({ returnObject });

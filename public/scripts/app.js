@@ -29,13 +29,16 @@ const createFoodItem = function(data) {
 
 
 const renderItems = (arr) => {
-
-  for (let item of arr) {
+  for (let item of arr.items) {
+    $(`#${item.category}-container`).empty();
+  }
+  for (let item of arr.items) {
     $(`#${item.category}-container`);
-    console.log("WOW", item.category);
     const newItemElement = createFoodItem(item);
     $(`#${item.category}-container`).append(newItemElement);
   }
+  let checkout = $('.checkout');
+  checkout.val(`Checkout (${arr.totalQuantity}) 🛒`);
 };
 
 
@@ -58,7 +61,7 @@ const loadItems = function() {
     url: "/restaurant/1/1",
   })
     .done((response) => {
-      renderItems(response.returnObject.items);
+      renderItems(response.returnObject);
     });
 };
 
@@ -90,20 +93,20 @@ $(document).ready(function() {
   // Make checkout counter count each time an item is added to cart
   $(document.body).on('click', '.add', function() {
     counter += 1;
-    let itemID = $(this).val()
-    let item = {id: itemID, orderID: 1, quantity: 1}
+    let itemID = $(this).val();
+    let item = { id: itemID, orderID: 1, quantity: 1 };
     console.log(item);
     $.post('/api/carts', item);
     // Target the checkout button
-    let checkout = $('.checkout');
-    checkout.val(`Checkout (${counter}) 🛒`);
+    loadItems();
+
   });
 
 
   $(document.body).on('click', '.remove', function() {
     counter -= 1;
-    let itemID = $(this).val()
-    let item = {id: itemID, orderID: 1, quantity: -1}
+    let itemID = $(this).val();
+    let item = { id: itemID, orderID: 1, quantity: -1 };
     console.log(item);
     $.post('/api/carts', item);
 
