@@ -88,22 +88,20 @@ const loadMyInfo = function() {
 
 // Create HTML template for order summary
 const createOrderSummary = function(data) {
+  console.log("data", data);
   let orderSummary = `
-  <h6>${data.quantity} items for $${data.total / 100} • ${data.date}</h6>
+  <h6>${data.totalQuantity} items for $${data.totalPrice / 100} • ${data.order[0].date}</h6>
 `;
   return orderSummary;
 };
 
 
 // Add order infortmation to be displayed on order summary
-const renderSummary = (arr) => {
-  for (let summary of arr) {
-    $(`#final-order`).empty();
-    const newSummary = createOrderSummary(summary);
-    $(`#final-order`).append(newSummary);
-  }
+const renderSummary = (obj) => {
+  $(`#final-order`).empty();
+  const newSummary = createOrderSummary(obj);
+  $(`#final-order`).append(newSummary);
 };
-
 
 // This script populates the order summary on the /my-order page, using database
 $(document).ready(function() {
@@ -118,7 +116,7 @@ const loadOrderSummary = function() {
     url: "/my-order/1",
   })
     .done((response) => {
-      renderSummary(response.returnObject.order);
+      renderSummary(response.returnObject);
     });
 };
 
