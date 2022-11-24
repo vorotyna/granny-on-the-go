@@ -34,7 +34,6 @@ const appendItems = (arr) => {
   console.log('hello from appendItems()');
 
   for (let item of arr) {
-    $('#item-list').empty();
     const newOrderItem = createNewOrderItem(item);
     console.log('this is a newOrderItem', newOrderItem);
     $('#item-list').append(newOrderItem);
