@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
 router.get('/:resId/:orderId', (req, res) => {
   // 1. gets items that belong to restaurant with resId
   // 2. gets the items from restaurant with resId that are in order with orderId
-  console.log("TEEEST", req.params);
   restaurantQueries.getItemsbyRestaurantId(req.params.resId)
     .then(items => {
       orderQueries.getItemsByOrderId(req.params.orderId)
@@ -33,6 +32,10 @@ router.get('/:resId/:orderId', (req, res) => {
         .status(500)
         .json({ error: err.message });
     });
+});
+
+router.delete('/:resId/:orderId', (req, res) => {
+
 });
 // TODO:
 // only when you click start order is when you make a new order id

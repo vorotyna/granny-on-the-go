@@ -62,6 +62,8 @@ const loadItems = function() {
   })
     .done((response) => {
       renderItems(response.returnObject);
+      // returnObject.items you have the item name
+      // returnObject.order items in order you have order id item id and qunaityt for indiv item
     });
 };
 
@@ -110,16 +112,7 @@ $(document).ready(function() {
     console.log(item);
     $.post('/api/carts', item);
 
-    // Target the checkout button
-    let checkout = $('.checkout');
-    checkout.val(`Checkout (${counter}) 🛒`);
-
-    // If counter is at 0, you cannot remove an item
-    if (counter < 0) {
-      counter = 0;
-      let checkout = $('.checkout');
-      checkout.val(`Checkout (${counter}) 🛒`);
-    }
+    loadItems();
   });
 
   //posts the cart info
