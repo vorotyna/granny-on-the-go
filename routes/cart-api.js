@@ -3,19 +3,19 @@ const router = express.Router();
 const orderQueries = require('../db/queries/orders');
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   if (req.body.quantity === '1') {
     orderQueries.addItemsToOrder(req.body)
-    .catch(err => {
-      err.message; 'Error adding item'
-    })
+      .catch(err => {
+        err.message; 'Error adding item';
+      });
     //res.send({message:'Item added to cart.'})
   } else {
     orderQueries.removeItemsToOrder(req.body)
-    res.send({message:'Item removed from cart.'})
-    .catch(err => {
-      err.message; 'Error removing item'
-    })
+      .catch(err => {
+        err.message; 'Error removing item';
+      });
+    res.send({ message: 'Item removed from cart.' });
   }
 
 });
