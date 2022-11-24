@@ -62,21 +62,13 @@ const loadItems = function() {
   })
     .done((response) => {
       renderItems(response.returnObject);
-      // returnObject.items you have the item name
-      // returnObject.order items in order you have order id item id and qunaityt for indiv item
+      appendItems(response.returnObject);
     });
 };
 
 loadItems();
 
-// get items from db for a certain restaurant
-// add items to a list and make a food component for each item
-// Function turns tweet object into HTML tweet article
 
-
-
-// add item-appetizers, item-mains, item-desserts, item-drinks ids
-// add
 
 
 
@@ -85,19 +77,14 @@ loadItems();
 // ----- CREATE COUNTER FOR ITEMS IN CART ----- //
 $(document).ready(function() {
 
-  // Create a counter
-  let counter = 0;
-
   //Create cart object
   // let cart = {orderID:1, itemID: 1, 1: 0, 2:0}
 
 
   // Make checkout counter count each time an item is added to cart
   $(document.body).on('click', '.add', function() {
-    counter += 1;
     let itemID = $(this).val();
     let item = { id: itemID, orderID: 1, quantity: 1 };
-    console.log(item);
     $.post('/api/carts', item);
     // Target the checkout button
     loadItems();
@@ -106,10 +93,8 @@ $(document).ready(function() {
 
 
   $(document.body).on('click', '.remove', function() {
-    counter -= 1;
     let itemID = $(this).val();
     let item = { id: itemID, orderID: 1, quantity: -1 };
-    console.log(item);
     $.post('/api/carts', item);
 
     loadItems();
@@ -122,3 +107,36 @@ $(document).ready(function() {
   // })
 
 });
+
+
+
+
+// ----- CREATE ITEMS IN CART DISPLAY ----- //
+
+//Creates a new order item using the template below
+const createNewOrderItem = (item) => {
+
+  let newOrderItem = `
+  <div class="item-container">
+    <p class="item-quantity">${item.quantity}</p>
+    <p class="item-name">${item.name}</p>
+  </div>
+  `;
+
+  return newOrderItem;
+};
+
+
+//Adds items to be displayed on my-order page
+const appendItems = (obj) => {
+  $('.items-list').empty();
+  for (let item of obj.orderItems) {
+    const newOrderItem = createNewOrderItem(item);
+    $('.items-list').append(newOrderItem);
+  }
+};
+
+
+
+
+
