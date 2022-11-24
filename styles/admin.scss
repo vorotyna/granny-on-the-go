@@ -148,7 +148,7 @@ hr {
   flex-direction: row;
 
   input {
-    width: 10%;
+    width: 6%;
     margin-left: 1rem;
   }
 
@@ -157,6 +157,11 @@ hr {
     margin-bottom: 0;
     margin-left: 0.5rem;
   }
+}
+
+#accept-order {
+  width: 50%;
+  align-self: center;
 }
 
 
