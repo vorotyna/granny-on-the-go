@@ -13,10 +13,10 @@ const createFoodItem = function(data) {
           <span class="menu-item-name">${data.name}</span>
           <div class="end-of-header">
             <span class="menu-item-price">$${data.price / 100}</span>
-            <button class="add">
+            <button class="add" value=${data.id}>
               +
             </button>
-            <button class="remove">
+            <button class="remove" value=${data.id}>
             -
           </button>
           </div>
@@ -38,7 +38,6 @@ const renderItems = (arr) => {
     $(`#${item.category}-container`).append(newItemElement);
   }
 };
-
 
 
 $(() => {
@@ -75,26 +74,38 @@ loadItems();
 // add item-appetizers, item-mains, item-desserts, item-drinks ids
 // add
 
+
+
 $(document).ready(function() {
+
   console.log('The document is ready!');
 
   // Create a counter
   let counter = 0;
 
+  //Create cart object
+  // let cart = {orderID:1, itemID: 1, 1: 0, 2:0}
+
+
   // Make checkout counter count each time an item is added to cart
   $(document.body).on('click', '.add', function() {
     counter += 1;
-    console.log(counter);
-
+    let itemID = $(this).val()
+    let item = {id: itemID, orderID: 1, quantity: 1}
+    console.log(item);
+    $.post('/api/carts', item);
     // Target the checkout button
     let checkout = $('.checkout');
     checkout.val(`Checkout (${counter}) 🛒`);
-
   });
+
 
   $(document.body).on('click', '.remove', function() {
     counter -= 1;
-    console.log(counter);
+    let itemID = $(this).val()
+    let item = {id: itemID, orderID: 1, quantity: -1}
+    console.log(item);
+    $.post('/api/carts', item);
 
     // Target the checkout button
     let checkout = $('.checkout');
@@ -107,4 +118,11 @@ $(document).ready(function() {
       checkout.val(`Checkout (${counter}) 🛒`);
     }
   });
+
+  //posts the cart info
+  // $('.checkout').on('click', function(){
+  //   console.log(cart)
+  //   $.post('/api/carts', cart);
+  // })
+
 });

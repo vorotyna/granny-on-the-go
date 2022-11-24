@@ -31,10 +31,6 @@ router.get('/:resId/:orderId', (req, res) => {
         .json({ error: err.message });
     });
 });
-
-router.post('/:orderId', (req, res) => {
-
-});
 // TODO:
 // only when you click start order is when you make a new order id
 // when you get('restaurant') no order id is made, that way we can refetch the order items on add/delete

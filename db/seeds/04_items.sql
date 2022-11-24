@@ -10,8 +10,8 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
   INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Lasagna',
   'mains',
-  'A tasty pickle lasagna',
+  'A tasty lasagna!',
   1100,
-  'https://en.wikipedia.org/wiki/Lasagna#/media/File:Lasagne_-_stonesoup.jpg',
+  'https://static.toiimg.com/thumb/55369113.cms?width=1200&height=900',
   1
   );
