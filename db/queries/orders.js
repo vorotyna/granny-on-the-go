@@ -3,7 +3,7 @@ const db = require('../connection');
 // Get items by order_id from database
 const getItemsByOrderId = (orderId) => {
   return db.query(
-    `SELECT items.name as name, items.price as price
+    `SELECT items.name as name, items.price as price, items_in_order.quanity as quantity
     FROM items
     JOIN items_in_order ON items.id = item_id
     WHERE items_in_order.order_id = ${orderId};`)

@@ -19,7 +19,7 @@ const createNewOrderItem = (data) => {
 
   let newOrderItem =
     `<div class="item-container">
-    <h5 class="item-quantity">1</h5>
+    <h5 class="item-quantity">${data.quantity}</h5>
     <p class="item-name">${data.name}</p>
     <p class="item-price">- $${data.price / 100}</p>
   </div>`;
@@ -38,8 +38,9 @@ const appendItems = (arr) => {
     const newOrderItem = createNewOrderItem(item);
     console.log('this is a newOrderItem', newOrderItem);
     $('#item-list').append(newOrderItem);
-
   }
+
+
 };
 
 
