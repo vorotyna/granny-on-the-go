@@ -1,5 +1,6 @@
 // Takes user to checkout page to
 const express = require('express');
+const utils = require('./utils');
 const userQueries = require('../db/queries/users');
 const orderQueries = require('../db/queries/orders');
 
@@ -26,8 +27,8 @@ router.get('/:userId', (req, res) => {
           returnObject = {};
           returnObject["userInfo"] = users;
           returnObject["order"] = orders;
-          returnObject["totalQuantity"] = totalQuantity(returnObject.order);
-          returnObject["totalPrice"] = totalPrice(returnObject.order);
+          returnObject["totalQuantity"] = utils.totalQuantity(returnObject.order);
+          returnObject["totalPrice"] = utils.totalPrice(returnObject.order);
 
 
           res.json({ returnObject });
@@ -40,23 +41,5 @@ router.get('/:userId', (req, res) => {
     });
 });
 
-
-// Function that sum the quantity of rows ^
-const totalQuantity = function(obj) {
-  let sumQuantity = 0;
-  for (let order of obj) {
-    sumQuantity += order.quantity;
-  }
-  return sumQuantity;
-};
-
-// Function that sums the total price ^^
-const totalPrice = function(obj) {
-  let sumPrice = 0;
-  for (let order of obj) {
-    sumPrice += order.quantity * order.price;
-  }
-  return sumPrice;
-};
 
 module.exports = router;
