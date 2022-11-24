@@ -15,7 +15,8 @@ router.post('/', (req, res) => {
   console.log('login Req.body' ,req.body.username)
 
   if (req.body.username === 'admin'){
-    return res.render('/admin')
+    req.session.id = 'admin'
+    return res.redirect('/admin')
   }
 
   //sets cookie session
