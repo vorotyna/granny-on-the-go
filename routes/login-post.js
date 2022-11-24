@@ -1,4 +1,3 @@
-// login user with login form
 const express = require('express');
 const router  = express.Router();
 const app = express();
@@ -10,10 +9,12 @@ app.use(cookieSession({
 }));
 
 
+//Login user using login form
 router.post('/', (req, res) => {
 
   console.log('login Req.body' ,req.body.username)
 
+  //if user is admin set admin cookie
   if (req.body.username === 'admin'){
     req.session.id = 'admin'
     return res.redirect('/admin')
