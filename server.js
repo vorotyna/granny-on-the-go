@@ -48,6 +48,7 @@ const myOrderRestaurantApiRoutes = require('./routes/sms-api-restaurant')
 const restaurantAPIRoutes = require('./routes/restaurant-api')
 const cartAPIRoutes = require('./routes/cart-api')
 const adminRoutes = require('./routes/admin')
+const adminPostRoutes = require('./routes/admin-post')
 //const smsReplyApiRoutes = require('./routes/sms-reply-api') REPLY DOESN'T WORK
 
 // Mount all resource routes
@@ -66,6 +67,7 @@ app.use('/my-order/restaurant', myOrderRestaurantApiRoutes)
 app.use('/restaurant', restaurantAPIRoutes)
 app.use('/api/carts', cartAPIRoutes)
 app.use('/admin', adminRoutes)
+app.use('/admin', adminPostRoutes)
 
 //app.use('/sms', smsReplyApiRoutes) REPLY DOESN'T WORK
 
