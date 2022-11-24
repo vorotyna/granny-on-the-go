@@ -6,10 +6,16 @@ router.post('/', (req, res) => {
   console.log(req.body)
   if (req.body.quantity === '1') {
     orderQueries.addItemsToOrder(req.body)
-    res.send({message:'Item added to cart.'})
+    .catch(err => {
+      err.message; 'Error adding item'
+    })
+    //res.send({message:'Item added to cart.'})
   } else {
     orderQueries.removeItemsToOrder(req.body)
-    res.send({message:'Item remove to cart.'})
+    res.send({message:'Item removed from cart.'})
+    .catch(err => {
+      err.message; 'Error removing item'
+    })
   }
 
 });

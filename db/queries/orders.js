@@ -92,8 +92,10 @@ const removeItemsToOrder = (itemObj) => {
         .catch(err => {
           console.log("error", err);
         });
-    });
-
+    })
+    .catch(err => {
+      err.message; 'Error removing item'
+    })
 
 };
 // Get order details by user_id
