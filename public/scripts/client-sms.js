@@ -6,13 +6,15 @@ $(() => {
 
   //When something is clicked - Send customer a text
   $('#accept-order').on('click', () => {
+
     console.log('Hello From clicked sms button')
+    console.log('Time value', $('#time-for-order').value)
 
     $.ajax({
       type: 'POST',
       url: '/my-order/customer',
       data: {
-        data:'To Customer ~ Thank you for placing an Order with Granny On The Go! Your order will be ready for pickup in 30 minuets'} //Insert data to be sent via sms here
+        data:`To Customer ~ Thank you for placing an Order with Granny On The Go! Your order will be ready for pickup in ${$('#time-for-order').val()} minuets`} //Insert data to be sent via sms here
     })
 
   });
