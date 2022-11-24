@@ -5,7 +5,7 @@ $(() => {
 
 
   //When something is clicked - Send customer a text
-  $('#test-sms').on('click', () => {
+  $('#complete-order').on('click', () => {
     console.log('Hello From clicked sms button')
 
     $.ajax({
@@ -19,7 +19,7 @@ $(() => {
 
 
   // When something is clicked - Send resturant a text
-  $('#test-sms').on('click', () => {
+  $('#complete-order').on('click', () => {
     console.log('Hello From clicked sms button')
 
     $.ajax({
