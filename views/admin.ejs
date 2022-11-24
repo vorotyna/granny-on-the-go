@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/footer.css" />
-    <link rel="stylesheet" href="/styles/my-orders.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
 
     <!-- FONTS  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- APP JS -->
-
+    <script type="text/javascript" src="/scripts/populate-myOrders.js"></script>
+    <script type="text/javascript" src="/scripts/client-sms.js"></script>
+    <script type="text/javascript" src="/scripts/order-admin.js"></script>
     <script src="/vendor/jquery-3.0.0.js"></script>
   </head>
 
@@ -39,32 +41,40 @@
     <header><% include partials/_header.ejs %></header>
     <main>
       <section class="my-order-summary">
-        <h2>My Order</h2>
+        <h2>Incoming Orders For: Admin</h2>
         <div class="button-display">
           <div class="grandma">
-            <img
-              src="https://www.tannersorchard.com/wp-content/uploads/2021/02/cooking-with-grandma-tanner-photo-1024x1024.jpg"
-              alt="profile-photo"
-            />
+
             <div class="grandma-specifications">
-              <h3>McGranny's (123 King St)</h3>
-              <div id="final-order"></div>
+              <div class="order-num">
+                <h4>Order Number:	&nbsp; 1</h4>
+              </div>
               <div class="item-list" id="item-list">
+              </div>
+              <hr>
+              <div class="total" id="total">
+
 
               </div>
             </div>
           </div>
-          <div class="buttons">
-            <button type="submit" id="order-again">Order again</button>
-            <button type="submit" id="complete-order">Complete order</button>
+          <div class="accept-order">
+            <h4 id="details">Details</h4>
+            <form id="accept-order-form" action="/admin" method="POST">
+              <div class="order-details" id="order-details">
+                <p>Name: </p>
+                <p>Phone: </p>
+              </div>
+              <div class="aprox-time">
+                <label for="time">Approximate time: </label>
+                <input type="text" name="time" placeholder="">
+                <p id="mins">minutes</p>
+              </div>
+              <button type="submit" id="accept-order">Accept order</button>
+            </form>
+
           </div>
         </div>
-      </section>
-
-      <section
-        class="order-confirmation-summary"
-        id="summary-container"
-      ></section>
     </main>
   </body>
 
