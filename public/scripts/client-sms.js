@@ -1,5 +1,5 @@
 
-//sends text when test sms button is clicked (TESTING PURPOSES)
+//sends text when when the event is triggered
 $(() => {
   console.log('hello from document ready!')
 

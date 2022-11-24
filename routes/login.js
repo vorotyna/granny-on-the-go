@@ -1,4 +1,3 @@
-// Takes user to login page to
 var cookieSession = require('cookie-session')
 const express = require('express');
 const router  = express.Router();
@@ -10,18 +9,22 @@ app.use(cookieSession({
 }))
 
 
+//takes user to login page
 router.get('/', (req, res) => {
 
+  //if user is not logged in
   if (!req.session.id){
     const templateVars = {user: false, admin: false}
     res.render('login', templateVars)
   }
 
+  //if user is admin
   if (req.session.id === 'admin'){
     const templateVars = {user: true, admin: true}
     res.render('login', templateVars)
   }
 
+  //if user is logged in
   const templateVars = {user: true, admin: false}
   res.render('login', templateVars);
 });
