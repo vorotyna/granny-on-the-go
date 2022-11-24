@@ -17,7 +17,7 @@ const addItemsToOrder = (itemObj) => {
 
   return db.query(`SELECT * FROM items_in_order WHERE order_id = $1 AND item_id = $2;`, [itemObj.orderID, itemObj.id])
     .then(data => {
-      return data.rows[0]
+      return data.rows[0];
     })
     .then(item => {
       if (!item) {
@@ -40,7 +40,7 @@ const addItemsToOrder = (itemObj) => {
           UPDATE items_in_order
           SET quantity = quantity + 1
           WHERE item_id = $1
-          RETURNING *`
+          RETURNING *`;
 
       const queryParams = [item.item_id];
 
@@ -51,7 +51,7 @@ const addItemsToOrder = (itemObj) => {
         .catch(err => {
           console.log("error", err);
         });
-    })
+    });
 
 
 };
@@ -61,7 +61,7 @@ const removeItemsToOrder = (itemObj) => {
 
   return db.query(`SELECT * FROM items_in_order WHERE order_id = $1 AND item_id = $2;`, [itemObj.orderID, itemObj.id])
     .then(data => {
-      return data.rows[0]
+      return data.rows[0];
     })
     .then(item => {
       if (item.quantity === 1) {
@@ -81,7 +81,7 @@ const removeItemsToOrder = (itemObj) => {
           UPDATE items_in_order
           SET quantity = quantity - 1
           WHERE item_id = $1
-          RETURNING *`
+          RETURNING *`;
 
       const queryParams = [item.item_id];
 
@@ -92,7 +92,7 @@ const removeItemsToOrder = (itemObj) => {
         .catch(err => {
           console.log("error", err);
         });
-    })
+    });
 
 
 };
@@ -100,11 +100,12 @@ const removeItemsToOrder = (itemObj) => {
 const getOrderSummary = (userId) => {
 
   const queryString = `
-  SELECT TO_CHAR(orders.time_placed, 'YYYY-MM-DD') as date, SUM(items_in_order.quantity) as quantity, orders.total_price as total
+  SELECT TO_CHAR(orders.time_placed, 'YYYY-MM-DD') as date, items.price as price, items_in_order.quantity as quantity
   FROM orders
   JOIN items_in_order ON order_id = orders.id
+  JOIN items ON item_id = items.id
   WHERE orders.user_id = $1
-  GROUP BY date, total;
+  GROUP BY date, price, quantity
   `;
 
 
