@@ -3,7 +3,7 @@ const db = require('../connection');
 // Get items by order_id from database
 const getItemsByOrderId = (orderId) => {
   return db.query(
-    `SELECT items.name as name, items.price as price, items_in_order.quanity as quantity
+    `SELECT items.name as name, items.price as price, items_in_order.quantity as quantity
     FROM items
     JOIN items_in_order ON items.id = item_id
     WHERE items_in_order.order_id = ${orderId};`)
@@ -100,7 +100,7 @@ const removeItemsToOrder = (itemObj) => {
 const getOrderSummary = (userId) => {
 
   const queryString = `
-  SELECT TO_CHAR(orders.time_placed, 'YYYY-MM-DD') as date, SUM(items_in_order.quanity) as quantity, orders.total_price as total
+  SELECT TO_CHAR(orders.time_placed, 'YYYY-MM-DD') as date, SUM(items_in_order.quantity) as quantity, orders.total_price as total
   FROM orders
   JOIN items_in_order ON order_id = orders.id
   WHERE orders.user_id = $1

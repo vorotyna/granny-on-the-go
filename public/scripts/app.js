@@ -31,7 +31,7 @@ const createFoodItem = function(data) {
 const renderItems = (arr) => {
 
   for (let item of arr) {
-    $(`#${item.category}-container`).empty();
+    $(`#${item.category}-container`);
     console.log("WOW", item.category);
     const newItemElement = createFoodItem(item);
     $(`#${item.category}-container`).append(newItemElement);

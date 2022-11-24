@@ -70,7 +70,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Cannoli',
-  'snacks and dessert',
+  'snacks',
   'filled with a sweet ricotta and creme cheese filling,',
   125,
   'https://www.cookiedoughandovenmitt.com/wp-content/uploads/2014/09/Cannoli-Cream-Square.jpg',
@@ -82,7 +82,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Gelato',
-  'snacks and dessert',
+  'snacks',
   'light, unbelievably smooth frozen dessert',
   450,
   'https://www.allrecipes.com/thmb/I8XVYqnflHCOotWRhlFWCPAftpg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4517634-gelato-Buckwheat-Queen-4x3-1-f5f732166ec64620b2a438391cbd0583.jpg',
