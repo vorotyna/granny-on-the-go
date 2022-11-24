@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
       .catch(err => {
         err.message; 'Error adding item';
       });
-    //res.send({message:'Item added to cart.'})
+    res.send({ message: 'Item added to cart.' });
   } else {
     orderQueries.removeItemsToOrder(req.body)
       .catch(err => {
