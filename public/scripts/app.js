@@ -1,7 +1,6 @@
-// ----- CREATE COUNTER FOR ITEMS IN CART ----- //
 $(document).ready(function() {
 
-  // Make checkout counter count each time an item is added to cart
+  // Adds items into table and refreshes the cart
   $(document.body).on('click', '.add', function() {
     let itemID = $(this).val();
     let item = { id: itemID, orderID: 1, quantity: 1 };
@@ -12,8 +11,10 @@ $(document).ready(function() {
       .catch(err => {
         console.log("error", err);
       });
+      loadItems();
   });
 
+   // Removes items from table and refreshes the cart
   $(document.body).on('click', '.remove', function() {
     let itemID = $(this).val();
     let item = { id: itemID, orderID: 1, quantity: -1 };
@@ -23,7 +24,8 @@ $(document).ready(function() {
       })
       .catch(err => {
         console.log("error", err);
-      });
+      })
+      loadItems();
   });
 
   $(() => {
@@ -34,6 +36,9 @@ $(document).ready(function() {
       })
         .then(() => {
           loadItems();
+        })
+        .catch(err => {
+          console.log("error", err);
         });
     });
   });
@@ -85,6 +90,8 @@ const renderItems = (arr) => {
   checkout.val(`Checkout (${arr.totalQuantity}) 🛒`);
 };
 
+
+//Loads menu items and items in cart
 const loadItems = function() {
   $.ajax({
     method: "GET",
@@ -93,6 +100,9 @@ const loadItems = function() {
     .done((response) => {
       renderItems(response.returnObject);
       appendItems(response.returnObject);
+    })
+    .catch(err => {
+      console.log("error", err);
     });
 };
 
