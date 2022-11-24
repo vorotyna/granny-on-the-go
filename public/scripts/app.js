@@ -1,4 +1,48 @@
-// Client facing scripts here
+// ----- CREATE COUNTER FOR ITEMS IN CART ----- //
+$(document).ready(function() {
+
+  // Make checkout counter count each time an item is added to cart
+  $(document.body).on('click', '.add', function() {
+    let itemID = $(this).val();
+    let item = { id: itemID, orderID: 1, quantity: 1 };
+    $.post('/api/carts', item)
+      .then(() => {
+        loadItems();
+      })
+      .catch(err => {
+        console.log("error", err);
+      });
+  });
+
+  $(document.body).on('click', '.remove', function() {
+    let itemID = $(this).val();
+    let item = { id: itemID, orderID: 1, quantity: -1 };
+    $.post('/api/carts', item)
+      .then(() => {
+        loadItems();
+      })
+      .catch(err => {
+        console.log("error", err);
+      });
+  });
+
+  $(() => {
+    $('#fetch-restaurant').click(() => {
+      $.ajax({
+        method: 'GET',
+        url: '/restaurant'
+      })
+        .then(() => {
+          loadItems();
+        });
+    });
+  });
+
+loadItems();
+
+});
+
+//Creates the HTML for each food item
 const createFoodItem = function(data) {
   let newItem = `
     <div class="menu-item">
@@ -27,7 +71,7 @@ const createFoodItem = function(data) {
   return newItem;
 };
 
-
+//Renders each item on the page
 const renderItems = (arr) => {
   for (let item of arr.items) {
     $(`#${item.category}-container`).empty();
@@ -41,20 +85,6 @@ const renderItems = (arr) => {
   checkout.val(`Checkout (${arr.totalQuantity}) 🛒`);
 };
 
-
-$(() => {
-  $('#fetch-restaurant').click(() => {
-    $.ajax({
-      method: 'GET',
-      url: '/restaurant'
-    })
-      .then(() => {
-        loadItems();
-      });
-  });
-});
-
-
 const loadItems = function() {
   $.ajax({
     method: "GET",
@@ -65,51 +95,6 @@ const loadItems = function() {
       appendItems(response.returnObject);
     });
 };
-
-loadItems();
-
-
-
-
-
-
-
-// ----- CREATE COUNTER FOR ITEMS IN CART ----- //
-$(document).ready(function() {
-
-  //Create cart object
-  // let cart = {orderID:1, itemID: 1, 1: 0, 2:0}
-
-
-  // Make checkout counter count each time an item is added to cart
-  $(document.body).on('click', '.add', function() {
-    let itemID = $(this).val();
-    let item = { id: itemID, orderID: 1, quantity: 1 };
-    $.post('/api/carts', item);
-    // Target the checkout button
-    loadItems();
-
-  });
-
-
-  $(document.body).on('click', '.remove', function() {
-    let itemID = $(this).val();
-    let item = { id: itemID, orderID: 1, quantity: -1 };
-    $.post('/api/carts', item);
-
-    loadItems();
-  });
-
-  //posts the cart info
-  // $('.checkout').on('click', function(){
-  //   console.log(cart)
-  //   $.post('/api/carts', cart);
-  // })
-
-});
-
-
-
 
 // ----- CREATE ITEMS IN CART DISPLAY ----- //
 
@@ -125,7 +110,6 @@ const createNewOrderItem = (item) => {
 
   return newOrderItem;
 };
-
 
 //Adds items to be displayed on my-order page
 const appendItems = (obj) => {
