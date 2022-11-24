@@ -5,7 +5,7 @@ $(() => {
 
 
   //When something is clicked - Send customer a text
-  $('#complete-order').on('click', () => {
+  $('#accept-order').on('click', () => {
     console.log('Hello From clicked sms button')
 
     $.ajax({

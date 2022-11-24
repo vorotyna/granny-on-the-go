@@ -47,6 +47,8 @@ const myOrderCustomerApiRoutes = require('./routes/sms-api-customer')
 const myOrderRestaurantApiRoutes = require('./routes/sms-api-restaurant')
 const restaurantAPIRoutes = require('./routes/restaurant-api')
 const cartAPIRoutes = require('./routes/cart-api')
+const adminRoutes = require('./routes/admin')
+const adminPostRoutes = require('./routes/admin-post')
 //const smsReplyApiRoutes = require('./routes/sms-reply-api') REPLY DOESN'T WORK
 
 // Mount all resource routes
@@ -64,6 +66,8 @@ app.use('/my-order/customer', myOrderCustomerApiRoutes)
 app.use('/my-order/restaurant', myOrderRestaurantApiRoutes)
 app.use('/restaurant', restaurantAPIRoutes)
 app.use('/api/carts', cartAPIRoutes)
+app.use('/admin', adminRoutes)
+app.use('/admin', adminPostRoutes)
 
 //app.use('/sms', smsReplyApiRoutes) REPLY DOESN'T WORK
 
@@ -80,11 +84,16 @@ app.use('/api/carts', cartAPIRoutes)
 app.get('/', (req, res) => {
 
   if (!req.session.id){
-    const templateVars = {user: false}
+    const templateVars = {user: false, admin: false}
     res.render('index', templateVars)
   }
 
-  const templateVars = {user: true}
+  if (req.session.id === 'admin'){
+    const templateVars = {user: true, admin: true}
+    res.render('login', templateVars)
+  }
+
+  const templateVars = {user: true, admin: false}
   res.render('index', templateVars);
 });
 

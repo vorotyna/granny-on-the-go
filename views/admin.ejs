@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Orders Page</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+
+    <!-- FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- BODY FONT ---- font-family: 'Libre Baskerville', serif;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- HEADER FONT ---- font-family: 'Square Peg', cursive;-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JQUERY IMPORT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- APP JS -->
+    <script type="text/javascript" src="/scripts/populate-myOrders.js"></script>
+    <script type="text/javascript" src="/scripts/client-sms.js"></script>
+    <script type="text/javascript" src="/scripts/order-admin.js"></script>
+    <script src="/vendor/jquery-3.0.0.js"></script>
+  </head>
+
+  <body>
+    <header><% include partials/_header.ejs %></header>
+    <main>
+      <section class="my-order-summary">
+        <h2>Incoming Orders For: Admin</h2>
+        <div class="button-display">
+          <div class="grandma">
+
+            <div class="grandma-specifications">
+              <div class="order-num">
+                <h4>Order Number:	&nbsp; 1</h4>
+              </div>
+              <div class="item-list" id="item-list">
+              </div>
+              <hr>
+              <div class="total" id="total">
+
+
+              </div>
+            </div>
+          </div>
+          <div class="accept-order">
+            <h4 id="details">Details</h4>
+            <form id="accept-order-form" action="/admin" method="POST">
+              <div class="order-details" id="order-details">
+                <p>Name: </p>
+                <p>Phone: </p>
+              </div>
+              <div class="aprox-time">
+                <label for="time">Approximate time: </label>
+                <input type="text" name="time" placeholder="">
+                <p id="mins">minutes</p>
+              </div>
+              <button type="submit" id="accept-order">Accept order</button>
+            </form>
+
+          </div>
+        </div>
+    </main>
+  </body>
+
+  <footer><% include partials/_footer.ejs %></footer>
+</html>

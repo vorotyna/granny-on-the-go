@@ -12,6 +12,13 @@ app.use(cookieSession({
 
 router.post('/', (req, res) => {
 
+  console.log('login Req.body' ,req.body.username)
+
+  if (req.body.username === 'admin'){
+    req.session.id = 'admin'
+    return res.redirect('/admin')
+  }
+
   //sets cookie session
   req.session.id = 123;
 
