@@ -8,12 +8,12 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
   );
 
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
-'Lasagna',
-'mains',
-'A tasty pickle lasagna',
-1600,
-'https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg',
-1
+  'Lasagna',
+  'mains',
+  'A tasty pickle lasagna',
+  1600,
+  'https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg',
+  1
 );
 
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
@@ -39,7 +39,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 
 
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
-  `Nona's famous Ravioli`,
+  'Nonas famous Ravioli',
   'mains',
   'Spinach & Ricotta w/ pomodoro sauce',
   1850,
@@ -83,7 +83,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Gelato',
   'snacks and dessert',
-  'light, unbelievably smooth frozen dessert'
+  'light, unbelievably smooth frozen dessert',
   450,
   'https://www.allrecipes.com/thmb/I8XVYqnflHCOotWRhlFWCPAftpg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4517634-gelato-Buckwheat-Queen-4x3-1-f5f732166ec64620b2a438391cbd0583.jpg',
   1
@@ -103,7 +103,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Italian Soda',
   'drinks',
-  'available in: Cherry, Blueberry or Pineapple'
+  'available in: Cherry, Blueberry or Pineapple',
   300,
   'https://i2.wp.com/lmld.org/wp-content/uploads/2018/02/Italian-Cream-Sodas-3.jpg',
   1
