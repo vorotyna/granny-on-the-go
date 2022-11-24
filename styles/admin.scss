@@ -1,5 +1,6 @@
 $lemonmeringue: #ede2b6;
 $floralwhite: #f8f6ed;
+$red: #c53d34;
 $bodyfont: "Libre Baskerville", serif;
 $descriptionfontsize: 13px;
 
@@ -58,16 +59,20 @@ main {
   color: rgba(0, 0, 0, 0.498);
 }
 
+
 .item-list {
   display: flex;
   flex-direction: column;
   align-items: baseline;
+
 }
 
 .item-container {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  margin-left: 2rem;
+  height: 3rem;
 }
 
 .item-quantity {
@@ -95,10 +100,66 @@ main {
   color: rgba(0, 0, 0, 0.498);
 }
 
-img {
-  width: 180px;
-  height: auto;
+hr {
+  margin-top: 1rem;
+  width: 15rem;
 }
+
+#total {
+  margin-left: 3.5rem;
+
+}
+
+#accept-order {
+  margin-top: 2rem;
+  background-color: $red;
+  color: floralwhite;
+  height: 1.7rem;
+  border: 2px solid $red;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#accept-order:hover {
+  background-color: floralwhite;
+  color: $red;
+  transition-duration: 0.4s;
+}
+
+.accept-order {
+  //border: 1px solid black;
+  width: 40%;
+
+
+  #details {
+    text-align: center;
+  }
+
+}
+
+#accept-order-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.aprox-time {
+  display: flex;
+  flex-direction: row;
+
+  input {
+    width: 10%;
+    margin-left: 1rem;
+  }
+
+  #mins {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
+}
+
+
 
 .order-confirmation-summary {
   @extend .my-order-summary;
