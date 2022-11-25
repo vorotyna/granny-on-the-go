@@ -49,7 +49,7 @@ const restaurantAPIRoutes = require('./routes/restaurant-api')
 const cartAPIRoutes = require('./routes/cart-api')
 const adminRoutes = require('./routes/admin')
 const adminPostRoutes = require('./routes/admin-post')
-//const smsReplyApiRoutes = require('./routes/sms-reply-api') REPLY DOESN'T WORK
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -69,7 +69,7 @@ app.use('/api/carts', cartAPIRoutes)
 app.use('/admin', adminRoutes)
 app.use('/admin', adminPostRoutes)
 
-//app.use('/sms', smsReplyApiRoutes) REPLY DOESN'T WORK
+
 
 
 
