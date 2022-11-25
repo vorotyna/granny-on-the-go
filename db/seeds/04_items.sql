@@ -10,7 +10,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Lasagna',
   'mains',
-  'Nonna''s delicious handmade lasagna. You will want leftover!',
+  'Nonna''s delicious handmade lasagna. You will want leftovers!',
   1600,
   'https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg',
   1
@@ -30,7 +30,7 @@ INSERT INTO items (name, category, description, price, img_url, restaurant_id) V
 INSERT INTO items (name, category, description, price, img_url, restaurant_id) VALUES (
   'Bruschetta',
   'appetizers',
-  'The real italian garlic bread! Topped with mozzarella, diced tomatoes, garlic and olive oil',
+  'The real italian garlic bread! Topped with mozzarella, diced tomatoes, garlic and olive oil.',
   700,
   'https://www.allrecipes.com/thmb/ZSIy3gJcPu2i-jNRwNvcYi2zEdw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/54165-Balsamic-Bruschetta-mfs_002-5a7881578a854bb187327708ee78503c.jpg',
   1
