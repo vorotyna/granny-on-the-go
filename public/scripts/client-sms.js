@@ -14,7 +14,7 @@ $(() => {
       type: 'POST',
       url: '/my-order/customer',
       data: {
-        data:`To Customer ~ Thank you for placing an Order with Granny On The Go! Your order will be ready for pickup in ${$('#time-for-order').val()} minuets`} //Insert data to be sent via sms here
+        data:`To Customer ~ Thank you for placing an Order with Nonna On The Go! Your order will be ready for pickup in ${$('#time-for-order').val()} minuets`} //Insert data to be sent via sms here
     })
 
   });
@@ -28,7 +28,7 @@ $(() => {
       type: 'POST',
       url: '/my-order/restaurant',
       data: {
-        data:'To Restaurant ~ Incoming order: 1x Good potatos'} //Insert data to be sent via sms here
+        data:'To Restaurant ~ Incoming order: 1 x Garlic Bread, 1x Cannoli, 1x esspresso, 1 x Nonnas famous Ravilo'} //Insert data to be sent via sms here
     })
 
   });
