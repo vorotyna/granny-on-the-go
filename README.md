@@ -1,7 +1,7 @@
 # Nonna on the Go
 
 ## A web app project by Alisa Vorotyntseva, Ben Stolb, and Corbin Heryet
-Created as a midterm project for Lighthouse Labs, Nonna on the Go is a first attempt from all of us at creating a web app in less than a week. Nonna on the Go is a food ordering service that allows you to order delicious homemade dishes from the local Nonna Maria. Once you login have access to the menu where you can choose what items to add to your cart and then from there you can checkout. Once you submit your order Nonna Maria will receive a text message alerting her to the order and from there she can confirm your order send you back a time estimate through text. 
+Nonna On The Go is a food ordering service that allows you to order delicious homemade dishes from the local Nonna Maria. Once you login, you have access to the menu where you can choose what items to add to your cart and then from there you can checkout. Once you submit your order Nonna Maria will receive a text message alerting her to the order and from there she can confirm your order send you back a time estimate through text. 
 
 This project utilised ES6, NodeJS, Express, jQuery, SASS, PostgreSQL, and git. 
 
